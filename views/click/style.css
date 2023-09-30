@@ -1,0 +1,50 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html{
+  padding: 0;
+  padding-top: 60px;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+  margin: 0;
+  background-color: #f5f6fb;
+  padding-bottom: 1000px;
+}
+#click-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#click-box {
+  height: 300px;
+  width: 850px;
+  border: 1px solid #ccc;
+  margin-top: 100px;
+}
+#redDot {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  display: none; /* Initially hide the red dot */
+}
+.ripple {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 0, 0, 0.4); /* Semi-transparent red */
+  border-radius: 50%; /* Make it a circle */
+  position: absolute; /* Position it relative to #myDiv */
+  transform: scale(0); /* Start as a small dot */
+  animation: ripple-animation 0.5s ease-out forwards; /* Animation */
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(10); /* Expand the ripple */
+    opacity: 0; /* Fade out the ripple */
+  }
+}
